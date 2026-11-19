@@ -1,0 +1,16 @@
+[project]
+name = "knowlake-engine"
+version = "0.1.0"
+description = "On-demand local content engine for KnowLake"
+requires-python = ">=3.11"
+dependencies = ["beautifulsoup4>=4.12,<5", "markdownify>=1.1,<2", "Pillow>=11,<13", "markdown-it-py>=3,<5"]
+
+[project.optional-dependencies]
+wechat-browser = ["camoufox>=0.4,<1"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

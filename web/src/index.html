@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file: knowlake-asset: https: http:; font-src 'self'; connect-src 'self' file: knowlake-asset: https: http:">
+  <link rel="stylesheet" href="reader.css">
+  <title>KnowLake</title>
+</head>
+<body>
+  <main id="app">
+    <header id="doc-header" hidden>
+      <a id="source-link" class="source-link" href="#" title="打开来源"><span id="source-label"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 4h6v6M20 4 10 14"/><path d="M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></svg></a>
+      <h1 id="doc-title"></h1>
+    </header>
+    <article id="article" aria-label="笔记正文"></article>
+    <section id="image-panel" aria-label="概览图" hidden>
+      <button id="image-open" aria-label="打开图片浏览器" title="查看大图" disabled>
+        <img id="overview-image" alt="概览图" draggable="false">
+      </button>
+    </section>
+    <nav id="outline" aria-label="目录" hidden></nav>
+    <p id="reader-status" role="status" aria-live="polite"></p>
+  </main>
+  <section id="image-viewer" role="dialog" aria-modal="true" aria-label="图片浏览器" hidden>
+    <div id="image-viewport"><img id="viewer-image" alt="" draggable="false"></div>
+    <div class="image-controls" role="toolbar" aria-label="图片缩放">
+      <button id="image-zoom-out" aria-label="缩小图片" title="缩小（−）">−</button>
+      <output id="image-zoom-value" aria-label="图片缩放比例">100%</output>
+      <button id="image-zoom-in" aria-label="放大图片" title="放大（+）">+</button>
+      <button id="image-fit" aria-label="图片适合窗口" title="适合窗口（0）">适合窗口</button>
+      <button id="image-close" aria-label="关闭图片浏览器" title="关闭（Esc）">×</button>
+    </div>
+  </section>
+  <script src="reader.js"></script>
+</body>
+</html>
